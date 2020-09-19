@@ -4,7 +4,6 @@ services:
   knxd:
     privileged: true
     image: knxd
-    container_name: knxd
     build: .
     network_mode: host
     volumes:
