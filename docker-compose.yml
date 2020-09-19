@@ -1,0 +1,15 @@
+version: '2.0'
+
+services:
+  knxd:
+    privileged: true
+    image: knxd
+    container_name: knxd
+    build: .
+    network_mode: host
+    volumes:
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
+    environment:
+      - TERM=xterm
